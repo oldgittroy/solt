@@ -1,0 +1,507 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>base_transforms module &mdash; solt v0.1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/msmb.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="constants module" href="constants.html" />
+    <link rel="prev" title="solt" href="modules.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Welcome to solt’s documentation!</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">solt</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">base_transforms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constants.html">constants module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html">core module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">data module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transforms.html">transforms module</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Examples:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Basics_of_solt.html">Basics of <strong>solt</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Helen_faces.html">Using <strong>solt</strong> to augment keypoints (landmarks) data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DSBowl18_segmentation.html">Using <strong>solt</strong> for instance and semantic segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Medical_Data_Augmentation_CXR14.html">Augmenting Medical Images: Chest X-ray 14 dataset</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">solt</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">solt</a> &raquo;</li>
+        
+      <li>base_transforms module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/base_transforms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-solt.base_transforms">
+<span id="base-transforms-module"></span><h1>base_transforms module<a class="headerlink" href="#module-solt.base_transforms" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="solt.base_transforms.BaseTransform">
+<em class="property">class </em><code class="descclassname">solt.base_transforms.</code><code class="descname">BaseTransform</code><span class="sig-paren">(</span><em>p=None</em>, <em>data_indices=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#BaseTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.BaseTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Transformation abstract class.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>p</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – Probability of executing this transform</li>
+<li><strong>data_indices</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)"><em>tuple</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – Indices where the transforms need to be applied</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="solt.base_transforms.BaseTransform.apply">
+<code class="descname">apply</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#BaseTransform.apply"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.BaseTransform.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies transformation to a DataContainer items depending on the type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference internal" href="data.html#solt.data.DataContainer" title="solt.data.DataContainer"><em>DataContainer</em></a>) – Data to be augmented</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>out</strong> – Result</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="data.html#solt.data.DataContainer" title="solt.data.DataContainer">DataContainer</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="solt.base_transforms.BaseTransform.sample_transform">
+<code class="descname">sample_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#BaseTransform.sample_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.BaseTransform.sample_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method. Must be implemented in the child classes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="solt.base_transforms.BaseTransform.serialize">
+<code class="descname">serialize</code><span class="sig-paren">(</span><em>include_state=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#BaseTransform.serialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.BaseTransform.serialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method returns an ordered dict, describing the object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>include_state</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – Whether to include a self.state_dict into the result. Mainly useful for debug.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>out</strong> – OrderedDict, ready for json serialization.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">OrderedDict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="solt.base_transforms.BaseTransform.use_transform">
+<code class="descname">use_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#BaseTransform.use_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.BaseTransform.use_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to randomly determine whether to use this transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>out</strong> – Boolean flag. True if the transform is used.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="solt.base_transforms.MatrixTransform">
+<em class="property">class </em><code class="descclassname">solt.base_transforms.</code><code class="descname">MatrixTransform</code><span class="sig-paren">(</span><em>interpolation='bilinear'</em>, <em>padding='z'</em>, <em>p=0.5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#MatrixTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.MatrixTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">solt.base_transforms._base_transforms.BaseTransform</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">solt.base_transforms._base_transforms.InterpolationPropertyHolder</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">solt.base_transforms._base_transforms.PaddingPropertyHolder</span></code></p>
+<p>Matrix Transform abstract class. (Affine and Homography).
+Does all the transforms around the image /  center.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>interpolation</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Interpolation mode.</li>
+<li><strong>padding</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Padding Mode.</li>
+<li><strong>p</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Probability of transform’s execution.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="solt.base_transforms.MatrixTransform.correct_for_frame_change">
+<em class="property">static </em><code class="descname">correct_for_frame_change</code><span class="sig-paren">(</span><em>M: numpy.ndarray</em>, <em>W: int</em>, <em>H: int</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#MatrixTransform.correct_for_frame_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.MatrixTransform.correct_for_frame_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method takes a matrix transform, and modifies its origin.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>M</strong> (<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.15)"><em>numpy.ndarray</em></a>) – Transform (3x3) matrix</li>
+<li><strong>W</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Width of the coordinate frame</li>
+<li><strong>H</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Height of the coordinate frame</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> – Modified Transform matrix</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.15)">numpy.ndarray</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="solt.base_transforms.MatrixTransform.fuse_with">
+<code class="descname">fuse_with</code><span class="sig-paren">(</span><em>trf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#MatrixTransform.fuse_with"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.MatrixTransform.fuse_with" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a transform an performs a matrix fusion. This is useful to optimize the computations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>trf</strong> (<a class="reference internal" href="#solt.base_transforms.MatrixTransform" title="solt.base_transforms.MatrixTransform"><em>MatrixTransform</em></a>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="solt.base_transforms.MatrixTransform.sample_transform">
+<code class="descname">sample_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#MatrixTransform.sample_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.MatrixTransform.sample_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method. Must be implemented in the child classes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="solt.base_transforms.DataDependentSamplingTransform">
+<em class="property">class </em><code class="descclassname">solt.base_transforms.</code><code class="descname">DataDependentSamplingTransform</code><span class="sig-paren">(</span><em>p=0.5</em>, <em>data_indices=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#DataDependentSamplingTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.DataDependentSamplingTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">solt.base_transforms._base_transforms.BaseTransform</span></code></p>
+<dl class="method">
+<dt id="solt.base_transforms.DataDependentSamplingTransform.sample_transform">
+<code class="descname">sample_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#DataDependentSamplingTransform.sample_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.DataDependentSamplingTransform.sample_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method. Must be implemented in the child classes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)">None</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="solt.base_transforms.DataDependentSamplingTransform.sample_transform_from_data">
+<code class="descname">sample_transform_from_data</code><span class="sig-paren">(</span><em>data: solt.data._data.DataContainer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#DataDependentSamplingTransform.sample_transform_from_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.DataDependentSamplingTransform.sample_transform_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Samples transform parameters based on data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference internal" href="data.html#solt.data.DataContainer" title="solt.data.DataContainer"><em>DataContainer</em></a>) – Data container to be used for sampling.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="solt.base_transforms.PaddingPropertyHolder">
+<em class="property">class </em><code class="descclassname">solt.base_transforms.</code><code class="descname">PaddingPropertyHolder</code><span class="sig-paren">(</span><em>padding=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#PaddingPropertyHolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.PaddingPropertyHolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Adds padding property to a class and validates it using the allowed paddings from constants.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>padding</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Padding mode.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="solt.base_transforms.PaddingPropertyHolder.padding">
+<code class="descname">padding</code><a class="headerlink" href="#solt.base_transforms.PaddingPropertyHolder.padding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="solt.base_transforms.InterpolationPropertyHolder">
+<em class="property">class </em><code class="descclassname">solt.base_transforms.</code><code class="descname">InterpolationPropertyHolder</code><span class="sig-paren">(</span><em>interpolation=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#InterpolationPropertyHolder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.InterpolationPropertyHolder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Adds interpolation property to a class and validates it using the allowed interpolations from constants.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>interpolation</strong> (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Padding mode.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="solt.base_transforms.InterpolationPropertyHolder.interpolation">
+<code class="descname">interpolation</code><a class="headerlink" href="#solt.base_transforms.InterpolationPropertyHolder.interpolation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="solt.base_transforms.ImageTransform">
+<em class="property">class </em><code class="descclassname">solt.base_transforms.</code><code class="descname">ImageTransform</code><span class="sig-paren">(</span><em>p=None</em>, <em>data_indices=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/solt/base_transforms/_base_transforms.html#ImageTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#solt.base_transforms.ImageTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">solt.base_transforms._base_transforms.BaseTransform</span></code></p>
+<p>Abstract class, allowing the application of a transform only to an image</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="constants.html" class="btn btn-neutral float-right" title="constants module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral" title="solt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Aleksei Tiulpin, Research Unit of Medical Imaging, Physics and Technology. University of Oulu.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        v0.1.3
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div>
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'v0.1.3',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="_static/js/versions.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
